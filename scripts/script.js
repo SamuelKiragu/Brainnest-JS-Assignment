@@ -25,8 +25,8 @@ function playRound(playerSelection, computerSelection){
 
     // show inputs of both players
     console.log(`
-        Player Choice: ${playerSelection}
-        Computer Choice: ${computerSelection}
+        Player's Choice: ${playerSelection}
+        Computer's Choice: ${computerSelection}
     `);
 
     //Is playerSelection a valid option?
