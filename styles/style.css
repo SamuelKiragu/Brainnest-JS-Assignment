@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#ConsoleSect{
+    background: #f2f2f2;
+    height: 100%;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+#PlaySect{
+    align-items:stretch;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+#PlaySect button{
+    height: 30px;
+    /* width: 100px; */
+}
+
+#ScoresSect{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.ScoreItem{
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: Column;
+    height: 100%;
+    padding: 20px;
+    width: 300px;
+}
+
+.ScoreItem .Section{
+    display: flex;
+    flex-direction: row;
+}
+
+.ScoreItem h1{
+    text-align: center;
+}
+
+.ScoreItem .Section h2,p{
+    flex-grow: 3;
+    font-size: 20px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    height:200px;
+    margin: 50px;
+}
