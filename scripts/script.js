@@ -48,7 +48,8 @@ function renderData(){
     document.querySelector("#PlayerScore").textContent = playerScore;
     document.querySelector("#ComputerScore").textContent = compScore;
     document.querySelector("#DrawScore").textContent = drawScore;
-    if(roundsPlayed == 5) document.querySelector("#Winner").textContent = winner;
+    if(roundsPlayed == 5 || roundsPlayed == 0) 
+        document.querySelector("#Winner").textContent = winner;
 }
 
 let buttons = document.querySelectorAll('button');
@@ -72,12 +73,15 @@ buttons.forEach((btn, key) => {
             playerSelection = "";
             computerSelection = "";
             result = "";
+            winner = "";
         }
         if(roundsPlayed == 5){
             winner = playerScore > compScore ? "PLAYER WINS" : "COMPUTER WINS";
             // add functionality to disable play buttons
             // add functionality to enable reset button
         }
+
+        // update DOM
         renderData();
     });
 });
