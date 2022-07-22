@@ -4,21 +4,19 @@
 }
 
 #ConsoleSect{
-    background: #f2f2f2;
+    background: #ffff;
     height: 100%;
-    margin: 10px;
     padding: 20px;
     width: 300px;
 }
 
 #PlaySect{
     align-items:stretch;
-    background: #f2f2f2;
+    background: #ffff;
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    margin: 10px;
     padding: 20px;
     width: 300px;
 }
@@ -29,19 +27,33 @@
 }
 
 #ScoresSect{
-    align-items: flex-end;
+    background-color: #ffff;
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    justify-content: space-evenly;
+    padding: 20px;
+    width: 300px;
+}
+
+#ScoresSect h3{
+    text-decoration: underline;
+}
+
+.DocSect{
+
+    margin: 50px 0 0;
+}
+
+.MainSect{
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    justify-content: space-between;
 }
 
 .ScoreItem{
-    background-color: #f2f2f2;
     display: flex;
-    flex-direction: Column;
-    height: 100%;
-    padding: 20px;
-    width: 300px;
+    flex-direction: Row;
 }
 
 .ScoreItem .Section{
@@ -61,8 +73,6 @@
 }
 
 body{
-    display: flex;
-    flex-direction: row;
-    height:200px;
-    margin: 50px;
+    background: #f2f2f2;
+    margin: 100px 150px 0;
 }
