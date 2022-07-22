@@ -10,21 +10,11 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     let playerWins;
 
-    // show inputs of both players
-    console.log(`
-        Player's Choice: ${playerSelection}
-        Computer's Choice: ${computerSelection}
-    `);
-
     //Is playerSelection a valid option?
-    if (!("ROCK,PAPER,SCISSORS".includes(playerSelection))) {
-        return "Kindly enter a valid game option.";
-    }
+    if (CHOICES.includes(playerSelection)) return "INVALID"
 
     //Is it a tie?
-    if (playerSelection == computerSelection) {
-        return "\tIt is a Tie! You both Win and Lose";
-    }
+    if (playerSelection == computerSelection) return "IT'S A TIE!";
 
     //Actual game logic
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
@@ -37,24 +27,26 @@ function playRound(playerSelection, computerSelection) {
         playerWins = false;
     }
 
-    return `
-    You ${playerWins ? 'Win' : 'Lose'}! 
-    ${playerWins ? playerSelection : computerSelection} beats
-    ${!playerWins ? playerSelection : computerSelection}
-    `;
+    return `YOU ${playerWins ? 'WIN' : 'LOSE'}!`;
 }
 
-// function game(){
-//     let playerSelection = null;
-//     let computerSelection = null;
-//     let result = null;
-//     for (let i = 0; i < 5; i++) {
-//         playerSelection = prompt("Rock, Paper, or Scissors?");
-//         computerSelection = computerPlay();
-//         result = playRound(playerSelection, computerSelection);
-//         console.log(result);
-//     }
-// }
+function game() {
+    let playerSelection = null;
+    let computerSelection = null;
+    let result = null;
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("Rock, Paper, or Scissors?");
+        computerSelection = computerPlay();
+
+        // show inputs of both players
+        console.log(`
+        Player's Choice: ${playerSelection}
+        Computer's Choice: ${computerSelection}`);
+
+        result = playRound(playerSelection, computerSelection);
+        console.log(result);
+    }
+}
 
 // Add eventListeners
 let buttons = document.querySelectorAll('button');
