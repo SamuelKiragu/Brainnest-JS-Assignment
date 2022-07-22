@@ -1,4 +1,6 @@
 const CHOICES = ["ROCK", "PAPER", "SCISSORS"];
+let round = 1;
+
 
 // function to get computer's choice
 function computerPlay() {
@@ -27,28 +29,15 @@ function playRound(playerSelection, computerSelection) {
     return `${playerWins ? 'WIN' : 'LOSE'}!`;
 }
 
-function game() {
-    let playerSelection = null;
-    let computerSelection = null;
-    let result = null;
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Rock, Paper, or Scissors?");
-        computerSelection = computerPlay();
-
-        // show inputs of both players
-        console.log(`
-        Player's Choice: ${playerSelection}
-        Computer's Choice: ${computerSelection}`);
-
-        result = playRound(playerSelection, computerSelection);
-        console.log(result);
-    }
-}
-
 // Add eventListeners
 let buttons = document.querySelectorAll('button');
 buttons.forEach((btn, key) => {
     btn.addEventListener('click', () => {
-        if (key < 3) playRound(CHOICES[key], computerPlay());
+        // These are the game options
+        if (key < 3){
+            playerSelection = CHOICES[key];
+            computerSelection = computerPlay();
+            result = playRound(playerSelection, computerSelection);
+        }
     });
 });
