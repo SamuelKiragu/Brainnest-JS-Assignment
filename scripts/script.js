@@ -10,11 +10,8 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     let playerWins;
 
-    //Is playerSelection a valid option?
-    if (CHOICES.includes(playerSelection)) return "INVALID"
-
     //Is it a tie?
-    if (playerSelection == computerSelection) return "IT'S A TIE!";
+    if (playerSelection == computerSelection) return "TIE";
 
     //Actual game logic
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
@@ -27,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
         playerWins = false;
     }
 
-    return `YOU ${playerWins ? 'WIN' : 'LOSE'}!`;
+    return `${playerWins ? 'WIN' : 'LOSE'}!`;
 }
 
 function game() {
