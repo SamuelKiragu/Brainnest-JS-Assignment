@@ -1,19 +1,8 @@
 // function to get computer's choice
 function computerPlay(){
-    const randomNumber = Math.floor(Math.random() *3);
-    let choice;
-    switch(randomNumber){
-        case 0:
-            choice =  "ROCK";
-            break;
-        case 1:
-            choice = "PAPER";
-            break;
-        case 2:
-            choice = "SCISSORS";
-            break;
-    }
-    return choice;
+    const choices = ["ROCK", "PAPER", "SCISSORS"];
+    const i = Math.floor(Math.random() *3);
+    return choices[i];
 }
 
 // function for single round play
