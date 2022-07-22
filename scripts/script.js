@@ -1,8 +1,4 @@
 const CHOICES = ["ROCK", "PAPER", "SCISSORS"];
-const ELEMENT_SELECTORS = [
-    "#PlayerChoice","#ComputerChoice","#Results","#PlayerScore","#ComputerScore"
-];
-
 //game variables
 let roundsPlayed = 0;
 let playerScore = 0;
@@ -75,10 +71,22 @@ buttons.forEach((btn, key) => {
             result = "";
             winner = "";
         }
+        
+
+        // disable button when game rounds are over
         if(roundsPlayed == 5){
             winner = playerScore > compScore ? "PLAYER WINS" : "COMPUTER WINS";
-            // add functionality to disable play buttons
-            // add functionality to enable reset button
+            buttons.forEach((btn,k)=>{
+                if(k < 3) btn.disabled = true;
+            });
+        }
+
+        // enable buttons when game is reset
+        if(roundsPlayed == 0){
+            winner = playerScore > compScore ? "PLAYER WINS" : "COMPUTER WINS";
+            buttons.forEach((btn,k)=>{
+                if(k < 3) btn.disabled = false;
+            });
         }
 
         // update DOM
