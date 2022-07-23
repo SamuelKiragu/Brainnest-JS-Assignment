@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "MochiyPopOne";
+    src: url("../fonts/MochiyPopOne-Regular.ttf");
+  }
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -26,6 +31,10 @@
     /* width: 100px; */
 }
 
+#PlaySect h4{
+    text-align: center;
+}
+
 #ScoresSect{
     background-color: #ffff;
     display: flex;
@@ -44,10 +53,23 @@
     margin: 50px 0 0;
 }
 
+.DocSection ,#PlaySect,#ConsoleSect,#ScoresSect{
+    background: #795548;
+    border: 6px solid black;
+}
+
+.DocSect.Header{
+    background: #8bc34a;
+    color: black;
+    box-shadow: 5px 5px 1px black;
+    padding: 20px 10px 20px;
+    width: fit-content;    
+}
+
 .MainSect{
     display: flex;
     flex-direction: row;
-    height: 200px;
+    height: 250px;
     justify-content: space-between;
 }
 
@@ -73,6 +95,15 @@
 }
 
 body{
-    background: #f2f2f2;
+    background: #4caf50;
+    font-family: "MochiyPopOne";
     margin: 100px 150px 0;
+}
+
+button{
+    background: #8bc34a;
+    border: 2px solid black;
+    font-family: 'MochiyPopOne';
+    font-weight: 100;
+    height: 35px;
 }
