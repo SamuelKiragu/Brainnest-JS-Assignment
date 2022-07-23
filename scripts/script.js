@@ -40,7 +40,7 @@ function renderData(){
     document.querySelector("#RemRounds").textContent = 5 -roundsPlayed;
     document.querySelector("#PlayerChoice").textContent = playerSelection;
     document.querySelector("#ComputerChoice").textContent = computerSelection;
-    document.querySelector("#Results").textContent = `YOU ${result}!`;
+    document.querySelector("#Results").textContent = roundsPlayed > 0 ?`YOU ${result}!`:"";
     document.querySelector("#PlayerScore").textContent = playerScore;
     document.querySelector("#ComputerScore").textContent = compScore;
     document.querySelector("#DrawScore").textContent = drawScore;
@@ -83,7 +83,7 @@ buttons.forEach((btn, key) => {
 
         // enable buttons when game is reset
         if(roundsPlayed == 0){
-            winner = playerScore > compScore ? "PLAYER WINS" : "COMPUTER WINS";
+            winner = ""
             buttons.forEach((btn,k)=>{
                 if(k < 3) btn.disabled = false;
             });
