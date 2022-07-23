@@ -20,7 +20,7 @@ function playRound(playerSelection, computerSelection) {
     let playerWins;
 
     //Is it a tie?
-    if (playerSelection == computerSelection) return "TIE";
+    if (playerSelection == computerSelection) return "TIED";
 
     //Actual game logic
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
@@ -33,14 +33,14 @@ function playRound(playerSelection, computerSelection) {
         playerWins = false;
     }
 
-    return `${playerWins ? 'WIN' : 'LOSE'}!`;
+    return playerWins ? "WON" : "LOST";
 }
 
 function renderData(){
     document.querySelector("#RemRounds").textContent = 5 -roundsPlayed;
     document.querySelector("#PlayerChoice").textContent = playerSelection;
     document.querySelector("#ComputerChoice").textContent = computerSelection;
-    document.querySelector("#Results").textContent = result;
+    document.querySelector("#Results").textContent = `YOU ${result}!`;
     document.querySelector("#PlayerScore").textContent = playerScore;
     document.querySelector("#ComputerScore").textContent = compScore;
     document.querySelector("#DrawScore").textContent = drawScore;
@@ -57,9 +57,9 @@ buttons.forEach((btn, key) => {
             computerSelection = computerPlay();
             result = playRound(playerSelection, computerSelection);
 
-            if(result == "WIN!") ++playerScore;
-            if(result == "LOSE!") ++compScore;
-            if(result == "TIE") ++drawScore;
+            if(result == "WON") ++playerScore;
+            if(result == "LOST") ++compScore;
+            if(result == "TIED") ++drawScore;
             ++roundsPlayed;
         }else{
             roundsPlayed = 0;
