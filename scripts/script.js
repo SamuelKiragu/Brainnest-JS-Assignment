@@ -72,7 +72,6 @@ buttons.forEach((btn, key) => {
             winner = "";
         }
         
-
         // disable button when game rounds are over
         if(roundsPlayed == 5){
             winner = playerScore > compScore ? "PLAYER WINS" : "COMPUTER WINS";
