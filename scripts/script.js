@@ -36,6 +36,7 @@ function playRound(playerSelection, computerSelection) {
     return playerWins ? "WON" : "LOST";
 }
 
+//function to update DOM sections
 function renderData(){
     document.querySelector("#RemRounds").textContent = 5 -roundsPlayed;
     document.querySelector("#PlayerChoice").textContent = playerSelection;
@@ -48,6 +49,7 @@ function renderData(){
         document.querySelector("#Winner").textContent = winner;
 }
 
+//EventListener
 let buttons = document.querySelectorAll('button');
 buttons.forEach((btn, key) => {
     btn.addEventListener('click', () => {
